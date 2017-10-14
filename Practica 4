@@ -1,0 +1,102 @@
+# Laboratorio-Base-de-Datos
+USE FarmaciaAmelia 
+GO
+
+select *
+from Producto
+
+insert into Producto (ID_Producto, Nombre, Precio, Tipo)
+values (newid(), 'diclofenaco', 50.00, 'analgesico')
+insert into Producto
+values (newid(), 'Advil', 70.00, 'analgesico')
+insert into Producto
+values (newid(), 'Aspirina', 20.00, 'analgesico')
+insert into Producto
+values (newid(), 'XL3', 100.00, 'antigripal')
+insert into Producto
+values (newid(), 'Tabcin', 75.00, 'antigripal')
+
+select * 
+from Sucursal
+ 
+insert into Sucursal 
+values (newid(), 'Sucursal Guadalupe', 'Revolución #255', 81125675, 'Juan Garza')
+insert into Sucursal 
+values (newid(), 'Sucursal Monterrey', 'Av Miguel Alemán  #803', 81285236, 'Adriana Ramirez')
+insert into Sucursal 
+values (newid(), 'Sucursal San Nicolás', 'Nogalar #25', 81125675, 'María Lopez')
+
+
+select *
+from Inventario
+
+insert into Inventario
+values (newid(), 100, '3AFA7930-F132-4181-8AAF-2626C2076886', '9C7A3857-7ADD-4F15-AA80-0286248E7AEF')
+insert into Inventario
+values (newid(), 200, '25C99E2F-0E59-4C4D-9A7A-46BC774B3F35', '9C7A3857-7ADD-4F15-AA80-0286248E7AEF')
+insert into Inventario
+values (newid(), 500, 'C8758663-E01A-498D-AEE4-93FDA52D2219', '55DA3F1F-94C9-432A-A734-6AE3FFA5B6FC')
+insert into Inventario
+values (newid(), 500, 'C8758663-E01A-498D-AEE4-93FDA52D2219', '9C7A3857-7ADD-4F15-AA80-0286248E7AEF')
+insert into Inventario
+values (newid(), 450, '25C99E2F-0E59-4C4D-9A7A-46BC774B3F35', '5B8025BC-5CB3-4BF8-A5DD-6D02F27B7292')
+
+select *
+from Proveedor
+
+insert into Proveedor
+values (newid(), 'ABCLab', 'C8758663-E01A-498D-AEE4-93FDA52D2219', '81156325','San Francisco #414')
+insert into Proveedor
+values (newid(), 'LabFarm', '25C99E2F-0E59-4C4D-9A7A-46BC774B3F35', '81278459','Benito Juarez #192-5')
+insert into Proveedor
+values (newid(), 'Laboratorios Monterrey', '3AFA7930-F132-4181-8AAF-2626C2076886', '812208549','Blvd. Acapulco "#45')
+
+select *
+from OrdenCompra
+
+insert into OrdenCompra
+values (newid(), 'B04BCFA8-1127-41FD-B78E-983FE889F483', '2017-07-05')
+insert into OrdenCompra
+values (newid(), '1B604CE7-1F28-41D5-905B-A4A7D0266DF7', '2017-08-21') 
+insert into OrdenCompra
+values (newid(), '9B568C81-84F2-4B91-8A93-A8EEF5F5460A', '2017-08-07')
+insert into OrdenCompra
+values (newid(), '9B568C81-84F2-4B91-8A93-A8EEF5F5460A', '2017-09-12')
+insert into OrdenCompra
+values (newid(), '9B568C81-84F2-4B91-8A93-A8EEF5F5460A', '2017-10-30')
+
+
+select *
+from Detalle_Compra
+
+insert into Detalle_Compra
+values (newid(), '1143B350-4D87-4CEB-86F0-34D9DCAC297B', '55DA3F1F-94C9-432A-A734-6AE3FFA5B6FC', 500, 15)
+insert into Detalle_Compra
+values (newid(), 'A37915AC-0B3A-4958-ACDB-625550BBED09', '5B8025BC-5CB3-4BF8-A5DD-6D02F27B7292', 200, 25)
+insert into Detalle_Compra
+values (newid(), 'F90AF61B-CF72-4922-928F-68BEA7878F52', '2E3E99AE-8A86-4CA7-9725-94326616C531', 150, 70)
+
+select * from Inventario 
+
+update Inventario Set Cantidad_Almacen = 150
+where ID_Inventario = 'EED9B020-1710-487B-A977-715B05878E5B'
+update Inventario Set Cantidad_Almacen = 75
+where ID_Inventario = '59402DE0-A461-42E2-8921-D6CA098FA61E'
+
+select * from Sucursal
+
+update Sucursal Set Direccion = 'Revolución #570'
+where ID_Sucursal = '25C99E2F-0E59-4C4D-9A7A-46BC774B3F35' 
+update Sucursal Set Responsable = 'Lizbeth Salazar'
+where ID_Sucursal = '25C99E2F-0E59-4C4D-9A7A-46BC774B3F35' 
+
+select * from Producto	
+
+update Producto Set Precio = 90
+where Nombre = 'Tabcin'
+
+delete from Producto where Precio = 90
+delete from OrdenCompra where ID_Compra ='35FB77B1-1DD4-4C99-B092-64FC35E098E2'
+delete from OrdenCompra where ID_Compra ='8C92071A-7E0C-4F61-B295-460E9F43EF58'
+delete from Inventario where ID_Producto = '55DA3F1F-94C9-432A-A734-6AE3FFA5B6FC'
+delete from Inventario where ID_Producto = '5B8025BC-5CB3-4BF8-A5DD-6D02F27B7292'
