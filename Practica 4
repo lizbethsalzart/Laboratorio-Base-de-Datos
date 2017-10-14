@@ -1,4 +1,77 @@
 # Laboratorio-Base-de-Datos
+
+USE farmacia
+GO
+
+select * 
+from Producto
+
+insert into Producto 
+values (NEWID(), 'Advil', 100, 'Medicamento') 
+
+insert into Producto
+values (NEWID(), 'Paracetamol', 90, 'Medicamento')
+
+insert into Producto
+values (NEWID(), 'Crema Corporal', 50 , 'Cuidado de la piel')
+
+insert into Producto
+values (NEWID(), 'Next', 150, 'Antigripal')
+
+insert into Producto
+values (NEWID(), 'Shampoo', 200, 'Cuidado del cabello')
+
+select * 
+from Sucursal
+
+select * 
+-- delete
+from Inventario
+
+select * 
+from farmacia.dbo.Producto
+
+insert into farmacia.dbo.Inventario
+select NEWID(), 50, '27B12D40-0916-4E2A-9E9C-4BFC14F48782', ID_Producto
+from farmacia.dbo.Producto
+
+insert into farmacia.dbo.Inventario
+values (NEWID(), 15, '27B12D40-0916-4E2A-9E9C-4BFC14F48782', '492C2B95-B0C5-4D18-9BFC-55E1939BAD26')
+
+insert into Inventario
+values (NEWID(), 26, '0D8A7557-9624-44D5-8A6F-7E014516051E', '3CA5B87D-CE0F-49FE-8231-6038FA9813D6')
+
+insert into Inventario 
+values (NEWID(), 56, '0D8A7557-9624-44D5-8A6F-7E014516051E', '79A4F181-46C0-4A79-8298-539D8A63CA9E')
+
+insert into Inventario
+values (NEWID(), 81, '3EBAB19B-A63D-4870-A00C-F68095C2A9B5', 'FF5ECF0A-335C-4CB7-8AEC-7A97D4C9E84B')
+
+insert into Inventario
+values (NEWID(), 74 , '3EBAB19B-A63D-4870-A00C-F68095C2A9B5', '96050B0F-D455-4E5B-92A0-81E480C31D0A')
+
+
+select *
+from Sucursal 
+
+insert into Sucursal 
+values (NEWID(), 'Guadalupe', 'Benito Juarez col. Lagos, #144', 22841724)
+
+insert into Sucursal 
+values (NEWID(), 'Santiago', '1° de mayo col. Los Fierros, #4785', 24501745)
+
+insert into Sucursal 
+values (NEWID(), 'San Nicolás', 'Alfonso Reyes col. Pedregal, #5410', 22852358)
+
+
+
+--hasta aqui lo que se pudo, ( por el problema que tuve:( )
+
+
+
+--continué con amelia 
+
+
 USE FarmaciaAmelia 
 GO
 
